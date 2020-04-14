@@ -1,0 +1,42 @@
+t<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Example Title</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+	<script type="text/javascript">
+  function createCart() {
+  let first = [0, 0, 0];
+    console.log("first : "+first);
+    console.log("type of first :"+typeof(first));
+  let firstString = JSON.stringify(first);
+  console.log("first string: " + firstString);
+  console.log("type FS: " + typeof (firstString));
+  localStorage.setItem('myCart', firstString);
+};
+    createCart();
+    
+    let tablo = [];
+function getValue() {
+  let reserve = localStorage.getItem("myCart");
+  console.log("reserve : " + reserve);
+  let firstParse = JSON.parse(reserve);
+    console.log("firstParse : " + firstParse);
+  tablo.push(firstParse);
+  console.log('push tab+reserve: ' + tablo);
+  }
+    getValue();
+  </script>
+</body>
+
+</html>

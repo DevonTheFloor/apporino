@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Target Value</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<header></header>
+	<main>
+	  <form>
+	    <label> Input <input type="text" id="input" ></label>
+	    <button id="go">Envoyer!</button>
+	  </form>
+	</main>
+	<footer></footer>
+	<script>
+    
+    let texte = document.getElementById('input');
+    texte.addEventListener('blur',function(e){
+      let valTex = e.target.value;
+        console.log("valText dasn addEvent : "+valTex);
+    });
+   console.log("valText HORS addEvent : "+valTex);
+    let texVal = texte.value;
+    console.log("texte value : "+texVal);
+    /*let TexValeur = texte.value;
+    console.log(TexValeur);*/
+  </script>
+</body>
+
+</html>

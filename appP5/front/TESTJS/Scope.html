@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Scope </title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+	<script type="text/javascript">
+  
+
+x = 1;
+y = 2;
+z = 3;
+
+function a(y) {
+  // y is local to the function, because it is a function parameter
+  console.log('local y: should be 10:', y); // local y through function parameter
+  y = 3; // will only overwrite local y, not 'global' y
+  console.log('local y: should be 3:', y); // local y
+  // global value could be accessed by referencing through window object
+  console.log('global y: should be 2:', window.y) // global y, different from local y ()
+
+  var x; // makes x a local variable
+  x = 4; // only overwrites local x
+  console.log('local x: should be 4:', x); // local x
+  
+  z = 5; // overwrites global z, because there is no local z
+  console.log('local z: should be 5:', z); // local z, same as global
+  console.log('global z: should be 5 5:', window.z, z) // global z, same as z, because z is not local
+}
+a(10);
+console.log('global x: should be 1:', x); // global x
+console.log('global y: should be 2:', y); // global y
+console.log('global z: should be 5:', z); // global z, overwritten in function a
+  </script>
+</body>
+
+</html>

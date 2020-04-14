@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Parse JSON TEST</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body>
+	<header></header>
+	<main>
+	  <div id="inner" ></div>
+	</main>
+	<footer></footer>
+	<script>
+   
+      /*let article = [
+        {noml:"kjhiu"},
+        {numero:98765432},
+      {ptic:789}
+  }];*/
+   /* let article = [{
+      noml:"kjhiu",
+      numero:987654321,
+      ptic:789
+  }];*/
+  /*let article = {
+      noml:"kjhiu",
+      numero:987654321,
+      ptic:789
+  };*/
+      /*let article = [
+         noml:"kjhiu",
+      numero:987654321,
+      ptic:789
+      ];*/
+     
+    
+    /*console.log(article);
+    let strini = JSON.stringify(article);*/
+    console.log("strinify : "+strini);
+    let parse = JSON.parse(strini);
+    console.log("parse :"+parse);
+    let aff = document.getElementById('inner');
+    aff.innerHTML= "coucou "+article.noml+" aurais tu "+article.ptic+" € ?";
+  </script>
+</body>
+
+</html>

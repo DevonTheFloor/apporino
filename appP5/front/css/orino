@@ -1,0 +1,49 @@
+/*
+Error: Invalid CSS after "  font-family:": expected expression (e.g. 1px, bold), was "}"
+        on line 118 of orino.scss
+
+113: ul{
+114:   display: flex;
+115:   flex-direction: row;
+116:   justify-content: space-around;
+117:   font-family: 
+118: }
+119: /*================== SMART PAYSAGE ================*\/
+120: 
+121: /*=============== SMART PORTAIT========================*\/
+122: @media screen and (max-width: 760px){
+123:   .logo-orino{
+
+Backtrace:
+orino.scss:118
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1207:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/script/lexer.rb:229:in `expected!'
+/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:710:in `assert_expr'
+/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:75:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1063:in `sass_script'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:909:in `value!'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:778:in `block in try_declaration'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1183:in `rethrow'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:791:in `try_declaration'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:720:in `declaration_or_ruleset'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:685:in `block_child'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:677:in `block_contents'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:666:in `block'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:658:in `ruleset'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:684:in `block_child'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:677:in `block_contents'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:125:in `stylesheet'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:41:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:406:in `_to_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:387:in `run'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:52:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
+/usr/bin/sass:8:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  font-family:\": expected expression (e.g. 1px, bold), was \"}\"\A         on line 118 of orino.scss\A \A 113: ul{\A 114:   display: flex;\A 115:   flex-direction: row;\A 116:   justify-content: space-around;\A 117:   font-family: \A 118: }\A 119: /*================== SMART PAYSAGE ================*/\A 120: \A 121: /*=============== SMART PORTAIT========================*/\A 122: @media screen and (max-width: 760px){\A 123:   .logo-orino{"; }

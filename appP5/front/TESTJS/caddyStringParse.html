@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>parse localstorage</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+	<script type="text/javascript">
+    let tablo=[];
+     let initial = [0,0,0];
+    tablo.push(initial);
+    console.log('tablo1 : '+tablo);
+    let firsString = JSON.stringify(initial);
+    console.log('initial string: '+firsString);
+    console.log("initila's type : "+typeof(firsString));
+    let caddy = localStorage.setItem('myCart',firsString);
+    let caddy23= localStorage.getItem('myCart');
+    console.log("caddy23 : "+caddy23);
+    let firParse = JSON.parse(firsString);
+    console.log('parse 23 : '+firParse);
+    console.log("parse23 type : "+typeof(firParse));
+
+    let caddy2 = localStorage.getItem('myCart');
+    tablo.push(firParse);
+    console.log("tablo 2 : "+tablo);
+    let produit =["chouette","agence","node"];
+    console.log('produit : '+produit);
+    tablo.push(produit);
+    console.log('tablo+produit : '+tablo);
+    console.log('type tablo : '+typeof(tablo));
+    
+    let seconString = JSON.stringify(tablo);
+    console.log('seconString : '+seconString);
+    console.log('type seconStrin : '+typeof(seconString)); 
+    let caddy3 = localStorage.getItem('myCart',seconString);
+    
+    
+    
+     /*console.log('caddy2 : '+caddy2);
+    console.log('type caddy2 : '+typeof(caddy2));
+    tablo.push(caddy2);
+    console.log("tablo+caddy2 : "+tablo);
+    console.log('type tab+cad2 : '+typeof(tablo));
+
+  
+    tablo.push(produit);
+    console.log('tablo+produit : '+tablo);
+    console.log('type tablo : '+typeof(tablo));
+    
+    let autreProdui = [2350,456,987];
+    console.log('autrProduit : '+autreProdui);
+    tablo.push(autreProdui);
+    console.log('tab+autrProd : '+tablo);
+    
+    //let stocage = JSON.stringify(tablo);
+    let newCaddy = localStorage.setItem('myCart',tablo);
+    console.log('newCaddy : '+tablo);
+    console.log('newCaddy : '+typeof(tablo));
+    
+    console.log('deuxieme étape');
+    let deuximCaddy = localStorage.getItem('myCart');
+    console.log('deuximCaddy');
+    let pars2 = JSON.stringify(deuximCaddy);
+    console.log('pars2 : '+pars2);*/
+    
+    
+    function recupCaddy(){
+      let recup = localStorage.getItem("myCart");
+      console.log('recup ; '+recup);
+      console.log('recup type : '+typeof(recup));
+    }
+    recupCaddy();
+  </script>
+</body>
+
+</html>

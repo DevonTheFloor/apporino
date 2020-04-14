@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Parse String</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+	<script type="text/javascript">
+    let stringTab= "[0,0,0],[albert,piuoiuoiuoiu,6981],[un,deux,3]";
+    let stringTabIfy = JSON.stringify(stringTab);
+    console.log("string strinify : "+stringTabIfy);
+    let tabStock = localStorage.setItem("myTest",stringTabIfy);
+    console.log("test storé : "+stringTabIfy );
+    let appelTab = localStorage.getItem("myTest");
+    console.log("appel tab : "+appelTab);
+    console.log("type appel Tab : "+typeof(appelTab));
+    let parseTab = JSON.parse(appelTab);
+    console.log("parse tab: "+parseTab);
+    console.log('type parse tab : '+typeof(parseTab));
+    let affichage = ()=>{
+      parseTab.forEach(truc =>{
+        console.log("element 1"+truc[0]);
+        console.log("element 1"+truc[1]);
+        console.log("element 1"+truc[2]);
+      });
+    };
+    affichage();
+  
+  </script>
+</body>
+
+</html>

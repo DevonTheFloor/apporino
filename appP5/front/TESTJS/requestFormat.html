@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Request Format TEST </title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+	<script type="text/javascript">
+  
+
+function testRequest() {
+  
+  let objt = {
+   contact :
+  {
+    firstName: "jean",
+    lastName: "valjan",
+    address: "ici et pas ailleurs",
+    city: "Paradise City",
+    email: "poiudg@hjedfru.gt"
+  },
+   products :[
+  "5be9c4471c9d440000a730e8",
+  "5be1ef211c9d44000030b062"
+    ]
+  }
+console.log(objt);
+let products = JSON.stringify(objt); 
+  console.log(products);
+      let request = new XMLHttpRequest();
+    request.onload = function () {
+    if (this.readyState == XMLHttpRequest.DONE) {
+      response = JSON.parse(this.responseText);
+      console.log("reponse: "+response);
+    }
+  };    
+  request.open("POST", "http://localhost:3000/api/cameras/order");
+ request.setRequestHeader("Content-Type", "application/json");
+  request.send(products);
+};
+
+testRequest();
+  
+  </script>
+</body>
+
+</html>

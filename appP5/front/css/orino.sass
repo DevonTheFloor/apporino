@@ -1,0 +1,104 @@
+$bg-color: #f3e9f1;
+
+.container
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+header
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+@keyframes move
+  0%{
+    transform: translateX(0px);
+  }
+  10%{
+    transform: translateX(-60px);
+  }
+  25%{
+    transform: translateX(30px);
+  }
+  50%{
+    transform: translateX(100px);
+  }
+  75%{
+    transform: translateX(150px);
+  }
+  100%{
+    transform: translateX(200px)
+  }
+}
+.logo
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-orino
+    width:35%;
+    height: auto;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 3000ms;
+    animation-iteration-count: 7;
+  
+
+
+.bann
+  width: 25%;
+  height: 10%;
+
+main
+  border: 2px solid yellow; 
+  width: 100%;
+
+
+@mixin degrad 
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc8437), to(#9b6cbb));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+button
+  width: 15%;
+  border: 2px solid #9b6cbb;
+  border-radius: 25px;
+  font-family: 'Ma Shan Zheng', cursive;
+  @include degrad;
+ /* background: -webkit-gradient(linear, left top, left bottom, from(#cc8437), to(#9b6cbb));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;*/
+  font-size: 2em;
+  padding: 1%;
+
+
+nav
+  margin: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $bg-color;
+
+.pic
+  width: 300px;
+  height: auto;
+
+ul
+  list-style: none;
+
+section
+  border: 40px solid $bg-color;
+
+#content
+  border: 3px solid violet;
+  background-color: beige;
+
+.thing
+  margin: 2%;
+  border: 7px solid orange;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+

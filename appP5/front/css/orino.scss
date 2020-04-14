@@ -1,0 +1,222 @@
+$bg-color: #f3e9f1;
+$mauvorino: #9b6cbb;
+body{
+  margin: 0;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header{
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+@keyframes move{
+  0%{
+    transform: translateX(0px);
+  }
+  10%{
+    transform: translateX(-60px);
+  }
+  25%{
+    transform: translateX(30px);
+  }
+  50%{
+    transform: translateX(100px);
+  }
+  75%{
+    transform: translateX(150px);
+  }
+  100%{
+    transform: translateX(200px)
+  }
+}
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-orino{
+    width:35%;
+    height: auto;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 3000ms;
+    animation-iteration-count: 7;
+  }
+}
+
+.bann{
+  width: 25%;
+  height: 10%;
+}
+main{
+  width: 100%;
+}
+
+@mixin degrad {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc8437), to(#9b6cbb));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+button{
+  width: 15%;
+  border: 2px solid $mauvorino;
+  border-radius: 25px;
+  font-family: 'Ma Shan Zheng', cursive;
+  @include degrad;
+  font-size: 2em;
+  padding: 1%;
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $bg-color;
+}
+ul{
+  list-style: none;
+}
+.pic{
+  width: 70%;
+  height: auto;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px 3px grey
+}
+
+.about{
+  width: 70%;
+}
+.view{
+  width: 30%;
+}
+section{
+  border: 20px solid $bg-color;
+  min-height: 100%;
+}
+#content{
+  border: 3px solid violet;
+  background-color: beige;
+}
+.thing{
+  margin: 2%;
+  border: 7px solid $mauvorino;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer{
+  width:100%;
+  position: fixed;
+  bottom: 1px;
+  background-color: $bg-color;
+}
+ol{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: 'Ma Shan Zheng', cursive;
+  color: $mauvorino;
+}
+#form{
+  background-color: $bg-color;
+  border: 6px solid $mauvorino;
+  border-radius: 10%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2%;
+}
+button{
+  margin: 1%;
+  min-width: 20%;
+}
+label{
+  margin: 1%;
+}
+.ticket{
+  border: 2px solid green;
+  text-align: center;
+  padding: 2%;
+  margin: 2%;
+  color: green;
+  font-size: 1.4em;
+  background-color:  #bff0ac ;
+}
+#go{
+  display :none;
+  min-width: 30%;
+}
+/*================== SMART PAYSAGE ================*/
+@media (orientation: landscape){
+  .logo-orino{
+    width:50%;
+  }
+  button{
+    min-width: 20%;
+    margin: 10px;
+  }
+}
+/*=============== SMART PORTAIT========================*/
+@media screen and (max-width: 760px){
+  .logo-orino{
+    width:100%;
+  }
+  
+  section{
+    border: 8px solid $bg-color;
+  }
+  
+  .thing{
+    flex-direction: column;
+    align-items: center;
+  }
+    nav{border: 2px color green;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  button{
+  width: 70%;
+  border: 2px solid $mauvorino;
+  border-radius: 10px;
+  font-family: 'Ma Shan Zheng', cursive;
+  @include degrad;
+  font-size: 1.5em;
+  margin: 1.5%;
+  padding: 1%;
+}
+  .view{
+    width:75%;
+  }
+  .about{
+    width: 95%;
+  }
+  ul{
+    font-size: 1.5em;
+  }
+  .pic{
+    width:100%;
+  }
+  #form{
+  background-color: $bg-color;
+  border: 2px solid $mauvorino;
+  border-radius: 5%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  padding: 1%;
+  }
+  main{
+    margin-bottom: 15%;
+  }
+}

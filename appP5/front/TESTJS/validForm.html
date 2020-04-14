@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Validation Formulaire</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body>
+	<header></header>
+	<main>
+	  <form>
+	    <input type="text" id="test">
+	    <input type="text" id="deux">
+	    <p id="alert"></p> 
+	    <button type="submit">Test It!</button>
+	  </form>
+	</main>
+	<footer></footer>
+	<script type="text/javascript" >
+    
+    let regex= /z/;
+    console.log(regex.test(' '));
+    console.log(regex.test('aaa'));
+    console.log(regex.test(' z'));
+    
+    function isValid(regex,value) {
+     let alert = document.getElementById('alert');
+      let verif = regex.test(value);
+      console.log("resultat : ");
+      console.log(regex.test(value));
+      if(verif == false ){
+        alert.innerHTML ="Code Invalide!"
+      console.log("value non conforme");
+      }else{
+        alert.innerHTML ="BRAVISSIMA!"
+        console.log('haaaa enfin!')};
+      console.log("regex : "+regex);
+}
+    
+    let regexR = /[a-z]{3}/;
+    let mot = document.getElementById('test');
+    mot.addEventListener('input',function(e){
+    let  motTest = e.target.value;
+    console.log("mot test : "+motTest);
+      isValid(regexR,motTest);
+    });
+let deux = document.getElementById('deux');
+    deux.addEventListener('input',function(e){
+      let deuxieme = e.target.value;
+      isValid(regexR,deuxieme);
+    });
+  </script>
+</body>
+
+</html>
