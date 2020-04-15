@@ -118,8 +118,6 @@ function verifFormulaire() {
     console.log("mailValue : " + mailValue);
     verifChamps(regexMail, mailValue);
   });
-  
-  
 }
 
 
@@ -144,7 +142,7 @@ function contacter() {
   
     reset.innerHTML = '<p class="errorCommande"> UNE ERREUR INCONNUE C\'EST PRODUITE.<br>Veulliez nous excusez pour la gène occasionnée.<br>Nous vous redirigeons sur votre boutique.<br> N\'hesitez pas à renouveller votre commande. </p>';
       localStorage.clear();
-      setTimeout(function(){window.history.back()}, 5000) ;
+      setTimeout(function(){window.history.back()}, 6000) ;
   } else {
 
     contact = {
