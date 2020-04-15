@@ -92,6 +92,7 @@ addPanier.addEventListener('click', function () {
   let caddy = JSON.stringify(firstParse);
   console.log("caddy : " + caddy);
   localStorage.setItem("myCart", caddy);
+  alert(`Votre produit: \n ${response.name}\n est bien ajouté a votre panier`);
 });
 //8) bouton revenir sur la boutique
 let back = document.getElementById('btn-back');

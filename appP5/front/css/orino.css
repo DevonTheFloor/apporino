@@ -42,6 +42,13 @@ header {
   width: 25%;
   height: 10%; }
 
+.visupanier {
+  min-width: 5%;
+  border: 1px solid #9b6cbb;
+  border-radius: 10px;
+  padding: 2px;
+  color: #9b6cbb; }
+
 main {
   width: 100%; }
 
@@ -65,6 +72,9 @@ nav {
 
 ul {
   list-style: none; }
+
+.navarticle {
+  margin-bottom: 4%; }
 
 .pic {
   width: 70%;
@@ -97,7 +107,8 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 1px;
-  background-color: #f3e9f1; }
+  background-color: #f3e9f1;
+  margin-top: 2%; }
 
 ol {
   list-style: none;
@@ -122,7 +133,8 @@ button {
   min-width: 20%; }
 
 label {
-  margin: 1%; }
+  margin: 1%;
+  min-width: 30%; }
 
 .ticket {
   border: 2px solid green;

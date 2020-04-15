@@ -53,6 +53,14 @@ header{
   width: 25%;
   height: 10%;
 }
+.visupanier{
+  min-width: 5%;
+  border: 1px solid $mauvorino;
+  border-radius: 10px;
+  padding: 2px;
+
+  color: $mauvorino;
+}
 main{
   width: 100%;
 }
@@ -81,6 +89,10 @@ nav{
 }
 ul{
   list-style: none;
+}
+
+.navarticle{
+  margin-bottom:4%;
 }
 .pic{
   width: 70%;
@@ -115,6 +127,7 @@ footer{
   position: fixed;
   bottom: 1px;
   background-color: $bg-color;
+  margin-top: 2%;
 }
 ol{
   list-style: none;
@@ -140,6 +153,7 @@ button{
 }
 label{
   margin: 1%;
+  min-width: 30%;
 }
 .ticket{
   border: 2px solid green;

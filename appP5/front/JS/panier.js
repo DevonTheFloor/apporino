@@ -147,6 +147,8 @@ function achat() {
     if (this.readyState == XMLHttpRequest.DONE) {
       let confirmation = JSON.parse(this.responseText);
       console.log(confirmation);
+      let clear = document.getElementById('contact');
+      clear.innerHTML="Votre commande sera traitée dans les plus bref délais. ";
       document.getElementById('ticket').innerHTML += "<p class=\"ticket\"> Votre commande à bien été prise en compte sous le numéro :  <br>" + confirmation.orderId + "<br>Merci de votre visite sur ORINOCO</p>";
     };
   }
