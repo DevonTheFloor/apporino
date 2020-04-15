@@ -145,22 +145,30 @@ ol {
   border: 6px solid #9b6cbb;
   border-radius: 10%;
   margin: 5%;
+  margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   width: 50%;
   padding: 2%; }
 
-/* line 150, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+/* line 151, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+#message {
+  color: red; }
+
+/* line 154, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
 button {
   margin: 1%;
   min-width: 20%; }
+  /* line 157, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  button:hover {
+    cursor: pointer; }
 
-/* line 154, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+/* line 161, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
 label {
   margin: 1%;
   min-width: 30%; }
 
-/* line 158, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+/* line 165, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
 .ticket {
   border: 2px solid green;
   text-align: center;
@@ -170,11 +178,11 @@ label {
   font-size: 1.4em;
   background-color: #bff0ac; }
 
-/* line 167, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+/* line 174, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
 #go {
   min-width: 30%; }
 
-/* line 170, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+/* line 177, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
 .errorCommande {
   text-align: center;
   color: #9b6cbb;
@@ -185,33 +193,33 @@ label {
 
 /*================== SMART PAYSAGE ================*/
 @media (orientation: landscape) {
-  /* line 180, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 187, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .logo-orino {
     width: 50%; }
-  /* line 183, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 190, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   button {
     min-width: 20%;
     margin: 10px; } }
 
 /*=============== SMART PORTAIT========================*/
 @media screen and (max-width: 760px) {
-  /* line 190, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 197, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .logo-orino {
     width: 100%; }
-  /* line 194, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 201, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   section {
     border: 8px solid #f3e9f1; }
-  /* line 198, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 205, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .thing {
     flex-direction: column;
     align-items: center; }
-  /* line 202, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 209, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   nav {
     border: 2px color green;
     width: 100%;
     flex-direction: column;
     align-items: center; }
-  /* line 207, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 214, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   button {
     width: 70%;
     border: 2px solid #9b6cbb;
@@ -223,19 +231,19 @@ label {
     font-size: 1.5em;
     margin: 1.5%;
     padding: 1%; }
-  /* line 217, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 224, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .view {
     width: 75%; }
-  /* line 220, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 227, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .about {
     width: 95%; }
-  /* line 223, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 230, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   ul {
     font-size: 1.5em; }
-  /* line 226, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 233, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   .pic {
     width: 100%; }
-  /* line 229, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 236, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   #form {
     background-color: #f3e9f1;
     border: 2px solid #9b6cbb;
@@ -246,7 +254,7 @@ label {
     justify-content: center;
     width: 80%;
     padding: 1%; }
-  /* line 240, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
+  /* line 247, /home/devon/Bureau/P5/appP5/front/css/orino.scss */
   main {
     margin-bottom: 15%; } }
 
