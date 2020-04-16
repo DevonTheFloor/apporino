@@ -66,7 +66,16 @@ let mailVal = mail.value;
 let mailValue;
 
 //fonction de vérificatiçn de la validité des champs du formulaire
-
+  function verifChamps(regex, value,message) {
+    let alert = document.getElementById('message');
+    let verif = regex.test(value);
+    if (verif == false) {
+      alert.innerHTML += message+"<br>";
+      console.log(message);
+    } else {
+      alert.innerHTML = " ";
+    };
+  };
 
 //création de l'objet contact à envoyer au serveur pour la commande
 let contact;
@@ -75,16 +84,7 @@ let contact;
 function verifFormulaire() {
 
 
-  function verifChamps(regex, value) {
-    let alert = document.getElementById('message');
-    let verif = regex.test(value);
-    if (verif == false) {
-      alert.innerHTML = "champs non conforme !!";
-      console.log("champs non comforme");
-    } else {
-      alert.innerHTML = " ";
-    };
-  };
+
 
   let regexNom = /[Aa-zZ]{3}/;
   let regexMail = /.+@.+\..+/;
@@ -92,31 +92,31 @@ function verifFormulaire() {
   prenom.addEventListener("blur", function (e) {
     prenomValue = e.target.value;
     console.log("prenomValue " + prenomValue);
-    verifChamps(regexNom, prenomValue);
+    verifChamps(regexNom, prenomValue,"Prénom non valide");
   });
 
   nom.addEventListener("blur", function (e) {
     nomValue = e.target.value;
     console.log("nomValue : " + nomValue);
-    verifChamps(regexNom, nomValue);
+    verifChamps(regexNom, nomValue,"Nom non valide");
   });
 
   adresse.addEventListener("blur", function (e) {
     adresseValue = e.target.value;
     console.log(" adresseValue : " + adresseValue);
-    verifChamps(regexNom, adresseValue);
+    verifChamps(regexNom, adresseValue,"Adresse non valide");
   });
 
   ville.addEventListener("blur", function (e) {
     villeValue = e.target.value;
     console.log(" villeValue : " + villeValue);
-    verifChamps(regexNom, villeValue);
+    verifChamps(regexNom, villeValue,"Ville non valide");
   });
 
   mail.addEventListener("blur", function (e) {
     mailValue = e.target.value;
     console.log("mailValue : " + mailValue);
-    verifChamps(regexMail, mailValue);
+    verifChamps(regexMail, mailValue,"Mail non valide");
   });
 }
 
@@ -127,7 +127,7 @@ verifFormulaire();
 function contacter() {
 
   let preValue = prenom.value;
-  console.log("prevalue conatc : " + preValue);
+  console.log("prevalue contact : " + preValue);
   let nomValue = nom.value;
   console.log("nom value contact : " + nomValue);
   adrValue = adresse.value;
@@ -138,11 +138,18 @@ function contacter() {
   console.log('mail value contact : ' + mailValue);
 
   if (!preValue || !nomValue || !adrValue || !villeValue || !mailValue) {
-    let reset = document.getElementById('reset');
-  
-    reset.innerHTML = '<p class="errorCommande"> UNE ERREUR INCONNUE C\'EST PRODUITE.<br>Veulliez nous excusez pour la gène occasionnée.<br>Nous vous redirigeons sur votre boutique.<br> N\'hesitez pas à renouveller votre commande. </p>';
-      localStorage.clear();
-      setTimeout(function(){window.history.back()}, 6000) ;
+    console.log("preValue acant cancel : "+preValue);
+    let go = document.getElementById('go');
+    go.addEventListener("click",function(e){
+      console.log("cancelable : "+typeof( event.cancelable ));
+      e.preventDefault();
+      alert("Le formulaire est mal renseigné")
+    })
+//    let reset = document.getElementById('reset');
+//  
+//    reset.innerHTML = '<p class="errorCommande"> UNE ERREUR INCONNUE C\'EST PRODUITE.<br>Veulliez nous excusez pour la gène occasionnée.<br>Nous vous redirigeons sur votre boutique.<br> N\'hesitez pas à renouveller votre commande. </p>';
+//      localStorage.clear();
+//      setTimeout(function(){window.history.back()}, 6000) ;
   } else {
 
     contact = {
@@ -176,17 +183,6 @@ function achat() {
     if (this.readyState == XMLHttpRequest.DONE) {
       let confirmation = JSON.parse(this.responseText);
       console.log(confirmation);
-//     let conretour = JSON.stringify(confirmation.contact)
-//     let formretour = JSON.parse(conretour);
-//      console.log(formretour);
-//      for (let coor of formretour){
-//          console.log(coor[i]);
-//      }
-//     
-//      
-      
-      
-      
       let clear = document.getElementById('contact');
       clear.innerHTML = "Votre commande sera traitée dans les plus bref délais. ";
       document.getElementById('ticket').innerHTML += "<p class=\"ticket\"> Votre commande à bien été prise en compte sous le numéro :  <br>" + confirmation.orderId + "<br>Merci de votre visite sur ORINOCO</p>";
@@ -200,13 +196,20 @@ function achat() {
 //bouton "acheter" pour envoyer le formulire de commande, vide le localstorage.
 let send = document.getElementById('go');
 send.addEventListener('click', function () {
-  let message = document.getElementById('message');
-  if (message = " " ) {
+  let mail = email.value;
+  console.log("mail dans send : "+mail)
+  if (nom.value && prenom.value && adresse.value && ville.value && mail) {
+    
+    let regex = /.+@.+\..+/;
+    let verif =  regex.test(mail);
+    console.log("verif dans send "+verif);
+    if (verif == true) {
+      
     achat();
     localStorage.clear();
     console.log('ok');
-  } else {
-    alert("Le formulaire est mal renseigné");
-  }
-
-});
+    } else {
+    alert("Merci de compléter le formulaire");
+      }
+    }
+  });
