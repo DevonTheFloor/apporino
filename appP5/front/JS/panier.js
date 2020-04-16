@@ -1,5 +1,4 @@
 let payer;
-
 /*Récupération du panier dans le local storage pour affichage*/
 let displayRecap = () => {
   let courses = localStorage.getItem("myCart");
@@ -86,7 +85,7 @@ function verifFormulaire() {
 
 
 
-  let regexNom = /[Aa-zZ]{3}/;
+  let regexNom = /[a-zA-Z]{3}/;
   let regexMail = /.+@.+\..+/;
 
   prenom.addEventListener("blur", function (e) {
@@ -137,21 +136,6 @@ function contacter() {
   mailValue = mail.value;
   console.log('mail value contact : ' + mailValue);
 
-  if (!preValue || !nomValue || !adrValue || !villeValue || !mailValue) {
-    console.log("preValue acant cancel : "+preValue);
-    let go = document.getElementById('go');
-    go.addEventListener("click",function(e){
-      console.log("cancelable : "+typeof( event.cancelable ));
-      e.preventDefault();
-      alert("Le formulaire est mal renseigné")
-    })
-//    let reset = document.getElementById('reset');
-//  
-//    reset.innerHTML = '<p class="errorCommande"> UNE ERREUR INCONNUE C\'EST PRODUITE.<br>Veulliez nous excusez pour la gène occasionnée.<br>Nous vous redirigeons sur votre boutique.<br> N\'hesitez pas à renouveller votre commande. </p>';
-//      localStorage.clear();
-//      setTimeout(function(){window.history.back()}, 6000) ;
-  } else {
-
     contact = {
       firstName: preValue,
       lastName: nomValue,
@@ -160,7 +144,7 @@ function contacter() {
       email: mailValue
     }
     return contact;
-  }
+  
 };
 
 console.log(" contact: " + contact);
@@ -200,9 +184,8 @@ send.addEventListener('click', function () {
   console.log("mail dans send : "+mail)
   if (nom.value && prenom.value && adresse.value && ville.value && mail) {
     
-    let regex = /.+@.+\..+/;
+    let regex = /.+@.+\..+[a-z]{1,3}/;
     let verif =  regex.test(mail);
-    console.log("verif dans send "+verif);
     if (verif == true) {
       
     achat();
